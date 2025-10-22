@@ -1,0 +1,17 @@
+name = "zrender-online"
+compatibility_date = "2024-11-29"
+pages_build_output_dir = "./apps/web/dist"
+
+[vars]
+RENDER_BACKEND_URL = "https://zrender-ai-1080973188623.us-west1.run.app"
+SUPABASE_URL = "https://cwncsroanxxogrbdgtcl.supabase.co"
+
+# ใส่เป็น secret ผ่าน wrangler:
+# SUPABASE_ANON_KEY
+# SUPABASE_SERVICE_ROLE_KEY
+
+# สำหรับ Pages Functions
+[[pages.functions]]
+directory = "./edge/functions"
+compatibility_date = "2024-11-29"
+node_compat = true
