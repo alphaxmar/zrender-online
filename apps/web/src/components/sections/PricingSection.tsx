@@ -8,18 +8,35 @@ interface PricingSectionProps {
 
 const plans = [
   {
-    name: "คอร์สใช้งาน + เครดิต $300",
-    price: "ฟรี",
-    period: "",
-    description:
-      "สอนใช้งานทีละขั้น และแนะแนวรับเครดิต $300 จาก Google Cloud (ขึ้นกับเงื่อนไขข้อเสนอปัจจุบัน)",
+    name: "คอร์สมาตรฐาน",
+    price: "฿4,900",
+    period: "จ่ายครั้งเดียว",
+    description: "เหมาะสำหรับผู้เริ่มต้นและมืออาชีพที่ต้องการลงมือทำทันที",
     features: [
-      "บทเรียนแบบลงมือทำ (Before/After, Inpaint, Video)",
-      "ตั้งค่า Google AI Studio และสร้าง API Key",
-      "แนะแนวรับเครดิต $300 อย่างถูกต้อง",
-      "ไม่มีบอกรายเดือน • ใช้เท่าที่ต้องการ",
+      "คอร์สออนไลน์เต็มรูปแบบ 10+ โมดูล",
+      "เวิร์กโฟลว์: Before/After, Inpaint, Video, Style Transfer",
+      "แนะแนวรับเครดิตเริ่มต้น $300",
+      "คู่มือ + Prompt Cheatsheet + Presets",
+      "อัปเดตคอร์สฟรีตลอดปี",
+      "ชุมชน + Support พื้นฐาน",
     ],
-    cta: "เริ่มเรียนรู้",
+    cta: "สมัครคอร์ส 4,900 บาท",
+    popular: false,
+  },
+  {
+    name: "คอร์สโปร (แนะนำ)",
+    price: "฿9,900",
+    period: "จ่ายครั้งเดียว",
+    description: "เหมาะสำหรับผู้ที่ต้องการโค้ชส่วนตัวและทรัพยากรระดับโปร",
+    features: [
+      "ทุกอย่างในคอร์สมาตรฐาน",
+      "Private Training 1:1 (60 นาที) หรือกลุ่มเล็ก",
+      "VIP Support + Priority Q&A",
+      "Templates/Presets Pro Pack",
+      "Workshop พิเศษ / Live Q&A รายเดือน",
+      "Certificate + Portfolio Review",
+    ],
+    cta: "สมัครคอร์สโปร 9,900 บาท",
     popular: true,
   },
 ];
@@ -30,10 +47,10 @@ const PricingSection = ({ onStartClick }: PricingSectionProps) => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            เรียนรู้การใช้งาน + วิธีรับเครดิต $300
+            สมัครคอร์สเรียน ZRENDER AI
           </h2>
           <p className="text-xl text-muted-foreground">
-            ไม่มีการบอกรายเดือน — เริ่มฟรีและใช้เครดิตจาก Google Cloud
+            จ่ายครั้งเดียว ใช้ความรู้และทรัพยากรได้ตลอด • แนะแนวรับเครดิตเริ่มต้น $300
           </p>
         </div>
 
@@ -92,7 +109,8 @@ const PricingSection = ({ onStartClick }: PricingSectionProps) => {
         </div>
 
         <p className="text-center text-muted-foreground mt-8">
-          ข้อเสนอเครดิตอาจเปลี่ยนตามนโยบาย Google/ภูมิภาค — กรุณาตรวจสอบหน้าโปรโมชันล่าสุด
+          * ข้อเสนอเครดิตอาจเปลี่ยนตามนโยบาย Google/ภูมิภาค — กรุณาตรวจสอบหน้าโปรโมชันล่าสุด<br/>
+          * ขณะนี้ยังไม่รองรับการออกใบกำกับภาษี
         </p>
       </div>
     </section>

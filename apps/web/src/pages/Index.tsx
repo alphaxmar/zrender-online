@@ -11,6 +11,8 @@ import CaseStudy from "@/components/sections/CaseStudy";
 import FAQSection from "@/components/sections/FAQSection";
 import TutorialSection from "@/components/sections/TutorialSection";
 import FreeCreditsSection from "@/components/sections/FreeCreditsSection";
+import ComparisonSection from "@/components/sections/ComparisonSection";
+import ManualHighlightsSection from "@/components/sections/ManualHighlightsSection";
 import { Button } from "@/components/ui/button";
 import { LogOut, Upload } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
@@ -28,11 +30,10 @@ const Index = () => {
     // Check if user is logged in
     if (!user) {
       toast({
-        title: "กรุณาเข้าสู่ระบบ",
-        description: "คุณต้องเข้าสู่ระบบก่อนใช้งาน",
-        variant: "destructive",
+        title: "สมัครเรียนเพื่อเข้าถึงเนื้อหา",
+        description: "แอดไลน์ @hjs2209n เพื่อสมัครเรียนและรับสิทธิ์เข้าถึง",
       });
-      navigate('/auth');
+      window.open('https://lin.ee/8ttXIxK', '_blank');
       return;
     }
 
@@ -108,10 +109,10 @@ const Index = () => {
         ) : (
           <Button
             variant="default"
-            onClick={() => navigate('/auth')}
+            onClick={() => window.open('https://lin.ee/8ttXIxK', '_blank')}
             className="gap-2"
           >
-            เข้าสู่ระบบ
+            สมัครเรียนผ่าน LINE
           </Button>
         )}
       </Navbar>
@@ -137,6 +138,12 @@ const Index = () => {
       {/* Tutorial & Free Credits */}
       <TutorialSection />
       <FreeCreditsSection />
+
+      {/* Summary from Manual */}
+      <ManualHighlightsSection />
+
+      {/* Comparison */}
+      <ComparisonSection />
 
       {/* Pricing */}
       <PricingSection onStartClick={handleStartRendering} />

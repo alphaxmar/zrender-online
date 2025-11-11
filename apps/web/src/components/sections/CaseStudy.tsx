@@ -18,7 +18,7 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
               กรณีศึกษาจริง
             </h2>
             <p className="text-xl text-muted-foreground">
-              สตูดิโอ ABC ลดเวลาทำงาน 70% ด้วย ZRENDER AI
+              ฟรีแลนซ์อินทีเรียร์เริ่มจาก 0 → ส่งงานภายใน 48 ชม. ด้วยคอร์ส + ZRENDER AI
             </p>
           </div>
 
@@ -30,8 +30,8 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
                   ปัญหา
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  สตูดิโอสถาปัตย์ ABC ใช้เวลาทำภาพ rendering นานถึง 2-3 วันต่อ 1 โปรเจกต์ 
-                  ทำให้ลูกค้ารอนาน และเสียโอกาสในการปิดดีลหลายครั้ง
+                  เริ่มงานได้เร็วแต่ขาดเวิร์กโฟลว์ที่ชัดเจน ทำภาพเรนเดอร์ใช้เวลาหลายวันต่อโปรเจกต์ 
+                  ส่งผลให้ตอบโจทย์ลูกค้าได้ช้าและปิดดีลยาก
                 </p>
               </div>
 
@@ -45,7 +45,7 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
                       1
                     </span>
                     <span className="text-muted-foreground">
-                      อัปโหลดภาพห้องเปล่าหรือ floor plan
+                      ลงทะเบียนคอร์สมาตรฐาน → รับเวิร์กโฟลว์ + คู่มือ + Presets
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -53,7 +53,7 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
                       2
                     </span>
                     <span className="text-muted-foreground">
-                      เลือกสไตล์ที่ต้องการ (Muji, Modern, Tropical)
+                      ตั้งค่า AI Studio + สร้าง API Key (เริ่มด้วยเครดิต $300)
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -61,7 +61,7 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
                       3
                     </span>
                     <span className="text-muted-foreground">
-                      ได้ 3 เวอร์ชันพร้อม Before/After ภายใน 1 นาที
+                      สร้าง Before/After 3 เวอร์ชัน + ปรับเฉพาะจุดด้วย Inpaint
                     </span>
                   </li>
                 </ol>
@@ -79,8 +79,8 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
                   </div>
                   <div className="p-4 rounded-lg bg-background border border-border">
                     <Zap className="h-6 w-6 text-primary mb-2" />
-                    <p className="text-2xl font-bold text-foreground">3 เครดิต</p>
-                    <p className="text-sm text-muted-foreground">ต่อโปรเจกต์</p>
+                    <p className="text-2xl font-bold text-foreground">$300</p>
+                    <p className="text-sm text-muted-foreground">เครดิตเริ่มต้น</p>
                   </div>
                   <div className="p-4 rounded-lg bg-background border border-border">
                     <TrendingUp className="h-6 w-6 text-primary mb-2" />

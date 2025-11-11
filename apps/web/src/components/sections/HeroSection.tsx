@@ -23,8 +23,20 @@ const HeroSection = ({ onStartClick, isProcessing }: HeroSectionProps) => {
               </span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-              สอนใช้งานทีละขั้น + แนะแนวรับเครดิต $300 จาก Google Cloud เพื่อเริ่มต้นแบบคุ้มค่า
+              สอนใช้งานทีละขั้น + แนะแนวรับเครดิตเริ่มต้น $300 เพื่อเริ่มต้นแบบคุ้มค่า
             </p>
+            {/* Pricing chips inline in Hero */}
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 bg-primary/10 text-foreground">
+                <span className="text-2xl font-bold">฿4,900</span>
+                <span className="text-xs text-muted-foreground">คอร์สมาตรฐาน • จ่ายครั้งเดียว</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-primary bg-primary/20 text-foreground">
+                <span className="text-2xl font-bold">฿9,900</span>
+                <span className="text-xs text-muted-foreground">คอร์สโปร • จ่ายครั้งเดียว</span>
+                <span className="ml-2 text-xs px-2 py-0.5 rounded-full bg-primary text-primary-foreground">แนะนำ</span>
+              </div>
+            </div>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button 
                 size="lg"
@@ -34,6 +46,14 @@ const HeroSection = ({ onStartClick, isProcessing }: HeroSectionProps) => {
               >
                 <Sparkles className="mr-2 h-5 w-5" />
                 {isProcessing ? "กำลังเชื่อมต่อ..." : "เริ่มเรียนรู้ฟรี"}
+              </Button>
+              <Button 
+                variant="default"
+                size="lg"
+                className="text-lg px-8 py-6"
+                onClick={() => window.open('https://lin.ee/8ttXIxK', '_blank')}
+              >
+                สมัครเรียนผ่าน LINE
               </Button>
               <Button 
                 variant="outline"
@@ -59,11 +79,25 @@ const HeroSection = ({ onStartClick, isProcessing }: HeroSectionProps) => {
           </div>
           
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="rounded-2xl border-2 border-border bg-card p-4 shadow-2xl">
-              <BeforeAfterSlider
-                beforeImage={before1}
-                afterImage={after1}
-              />
+            <div className="space-y-4">
+              <div className="rounded-2xl border-2 border-border bg-card p-4 shadow-2xl">
+                <div className="relative pt-[56.25%]">
+                  <iframe
+                    src="https://www.youtube.com/embed/C9vWeMvD3vs"
+                    title="คอร์สเรียนใช้ AI เพื่อสร้างไอเดียงานสถาปัตย์"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full rounded-xl"
+                  />
+                </div>
+              </div>
+              <div className="rounded-2xl border-2 border-border bg-card p-4 shadow-2xl">
+                <BeforeAfterSlider
+                  beforeImage={before1}
+                  afterImage={after1}
+                />
+              </div>
             </div>
           </div>
         </div>
