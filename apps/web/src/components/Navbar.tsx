@@ -28,6 +28,12 @@ const Navbar = ({ children }: NavbarProps) => {
             <a href="#about" className="text-foreground hover:text-primary transition-colors">
               เกี่ยวกับเรา
             </a>
+            <a href="#tutorial" className="text-foreground hover:text-primary transition-colors">
+              บทเรียน
+            </a>
+            <a href="#free-credits" className="text-foreground hover:text-primary transition-colors">
+              เครดิต $300
+            </a>
           </div>
 
           <div className="flex items-center gap-4">

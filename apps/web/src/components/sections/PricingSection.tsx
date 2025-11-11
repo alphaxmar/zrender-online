@@ -8,53 +8,20 @@ interface PricingSectionProps {
 
 const plans = [
   {
-    name: "Free",
+    name: "คอร์สใช้งาน + เครดิต $300",
     price: "ฟรี",
     period: "",
-    description: "เหมาะสำหรับทดลองใช้งาน",
+    description:
+      "สอนใช้งานทีละขั้น และแนะแนวรับเครดิต $300 จาก Google Cloud (ขึ้นกับเงื่อนไขข้อเสนอปัจจุบัน)",
     features: [
-      "20 เครดิตเริ่มต้น",
-      "Basic rendering",
-      "มีลายน้ำ",
-      "คุณภาพ Standard",
-      "Support พื้นฐาน"
+      "บทเรียนแบบลงมือทำ (Before/After, Inpaint, Video)",
+      "ตั้งค่า Google AI Studio และสร้าง API Key",
+      "แนะแนวรับเครดิต $300 อย่างถูกต้อง",
+      "ไม่มีบอกรายเดือน • ใช้เท่าที่ต้องการ",
     ],
-    cta: "เริ่มใช้ฟรี",
-    popular: false
+    cta: "เริ่มเรียนรู้",
+    popular: true,
   },
-  {
-    name: "Pro",
-    price: "฿990",
-    period: "/เดือน",
-    description: "เหมาะสำหรับฟรีแลนซ์และสตูดิโอเล็ก",
-    features: [
-      "200 เครดิต/เดือน",
-      "ลบลายน้ำได้",
-      "High Quality rendering",
-      "แก้ไขไม่จำกัด",
-      "Priority support",
-      "Advanced features"
-    ],
-    cta: "เริ่มใช้ Pro",
-    popular: true
-  },
-  {
-    name: "Studio",
-    price: "฿2,990",
-    period: "/เดือน",
-    description: "เหมาะสำหรับทีมและสตูดิโอใหญ่",
-    features: [
-      "เครดิตไม่จำกัด",
-      "โฟลเดอร์ทีม",
-      "สิทธิ์ใช้งานเชิงพาณิชย์",
-      "API Access",
-      "SLA 99.9%",
-      "Dedicated support",
-      "Custom training"
-    ],
-    cta: "ติดต่อเรา",
-    popular: false
-  }
 ];
 
 const PricingSection = ({ onStartClick }: PricingSectionProps) => {
@@ -63,10 +30,10 @@ const PricingSection = ({ onStartClick }: PricingSectionProps) => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            เลือกแพ็คเกจที่เหมาะกับคุณ
+            เรียนรู้การใช้งาน + วิธีรับเครดิต $300
           </h2>
           <p className="text-xl text-muted-foreground">
-            เริ่มฟรี แล้วอัปเกรดทีหลัง
+            ไม่มีการบอกรายเดือน — เริ่มฟรีและใช้เครดิตจาก Google Cloud
           </p>
         </div>
 
@@ -125,7 +92,7 @@ const PricingSection = ({ onStartClick }: PricingSectionProps) => {
         </div>
 
         <p className="text-center text-muted-foreground mt-8">
-          ทุกแพ็คเกจไม่ผูกมัด ยกเลิกได้ทุกเมื่อ
+          ข้อเสนอเครดิตอาจเปลี่ยนตามนโยบาย Google/ภูมิภาค — กรุณาตรวจสอบหน้าโปรโมชันล่าสุด
         </p>
       </div>
     </section>

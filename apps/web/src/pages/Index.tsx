@@ -9,6 +9,8 @@ import SocialProof from "@/components/sections/SocialProof";
 import PricingSection from "@/components/sections/PricingSection";
 import CaseStudy from "@/components/sections/CaseStudy";
 import FAQSection from "@/components/sections/FAQSection";
+import TutorialSection from "@/components/sections/TutorialSection";
+import FreeCreditsSection from "@/components/sections/FreeCreditsSection";
 import { Button } from "@/components/ui/button";
 import { LogOut, Upload } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
@@ -131,6 +133,10 @@ const Index = () => {
 
       {/* Social Proof */}
       <SocialProof />
+
+      {/* Tutorial & Free Credits */}
+      <TutorialSection />
+      <FreeCreditsSection />
 
       {/* Pricing */}
       <PricingSection onStartClick={handleStartRendering} />

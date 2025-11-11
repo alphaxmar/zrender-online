@@ -23,7 +23,7 @@ const HeroSection = ({ onStartClick, isProcessing }: HeroSectionProps) => {
               </span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-              อัปโหลดห้องเปล่า → เลือกสไตล์ → ได้ 3 เวอร์ชันพร้อม Before/After
+              สอนใช้งานทีละขั้น + แนะแนวรับเครดิต $300 จาก Google Cloud เพื่อเริ่มต้นแบบคุ้มค่า
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button 
@@ -33,15 +33,16 @@ const HeroSection = ({ onStartClick, isProcessing }: HeroSectionProps) => {
                 className="text-lg px-8 py-6 shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] transition-all"
               >
                 <Sparkles className="mr-2 h-5 w-5" />
-                {isProcessing ? "กำลังเชื่อมต่อ..." : "เริ่มใช้งานฟรี (20 เครดิต)"}
+                {isProcessing ? "กำลังเชื่อมต่อ..." : "เริ่มเรียนรู้ฟรี"}
               </Button>
               <Button 
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 py-6"
+              onClick={() => document.getElementById("free-credits")?.scrollIntoView({ behavior: "smooth" })}
               >
                 <Play className="mr-2 h-5 w-5" />
-                ดูเดโม 30 วิ
+                ดูวิธีรับเครดิต $300
               </Button>
             </div>
             <div className="mt-6 flex flex-col gap-2">
