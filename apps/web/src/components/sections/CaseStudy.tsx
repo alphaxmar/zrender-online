@@ -3,22 +3,24 @@ import { ArrowRight, Clock, Zap, TrendingUp } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import before1 from "@/assets/before-1.jpg";
 import after1 from "@/assets/after-1.jpg";
+import { useI18n } from "@/lib/i18n";
 
 interface CaseStudyProps {
   onCreateClick: () => void;
 }
 
 const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
+  const { t } = useI18n();
   return (
     <section className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              กรณีศึกษาจริง
+              {t("case_title")}
             </h2>
             <p className="text-xl text-muted-foreground">
-              ฟรีแลนซ์อินทีเรียร์เริ่มจาก 0 → ส่งงานภายใน 48 ชม. ด้วยคอร์ส + ZRENDER AI
+              {t("case_subtitle")}
             </p>
           </div>
 
@@ -27,17 +29,16 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
             <div className="space-y-6">
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-foreground">
-                  ปัญหา
+                  {t("case_problem_title")}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  เริ่มงานได้เร็วแต่ขาดเวิร์กโฟลว์ที่ชัดเจน ทำภาพเรนเดอร์ใช้เวลาหลายวันต่อโปรเจกต์ 
-                  ส่งผลให้ตอบโจทย์ลูกค้าได้ช้าและปิดดีลยาก
+                  {t("case_problem_desc")}
                 </p>
               </div>
 
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-foreground">
-                  วิธีทำ 3 ขั้นตอน
+                  {t("case_steps_title")}
                 </h3>
                 <ol className="space-y-3">
                   <li className="flex gap-3">
@@ -45,7 +46,7 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
                       1
                     </span>
                     <span className="text-muted-foreground">
-                      ลงทะเบียนคอร์สมาตรฐาน → รับเวิร์กโฟลว์ + คู่มือ + Presets
+                      {t("case_step1")}
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -53,7 +54,7 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
                       2
                     </span>
                     <span className="text-muted-foreground">
-                      ตั้งค่า AI Studio + สร้าง API Key (เริ่มด้วยเครดิต $300)
+                      {t("case_step2")}
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -61,7 +62,7 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
                       3
                     </span>
                     <span className="text-muted-foreground">
-                      สร้าง Before/After 3 เวอร์ชัน + ปรับเฉพาะจุดด้วย Inpaint
+                      {t("case_step3")}
                     </span>
                   </li>
                 </ol>
@@ -69,23 +70,23 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
 
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-foreground">
-                  ผลลัพธ์
+                  {t("case_results_title")}
                 </h3>
                 <div className="grid grid-cols-3 gap-4">
                   <div className="p-4 rounded-lg bg-background border border-border">
                     <Clock className="h-6 w-6 text-primary mb-2" />
                     <p className="text-2xl font-bold text-foreground">60 วิ</p>
-                    <p className="text-sm text-muted-foreground">เวลาทำงาน</p>
+                    <p className="text-sm text-muted-foreground">{t("case_metric_time_label")}</p>
                   </div>
                   <div className="p-4 rounded-lg bg-background border border-border">
                     <Zap className="h-6 w-6 text-primary mb-2" />
                     <p className="text-2xl font-bold text-foreground">$300</p>
-                    <p className="text-sm text-muted-foreground">เครดิตเริ่มต้น</p>
+                    <p className="text-sm text-muted-foreground">{t("case_metric_credit_label")}</p>
                   </div>
                   <div className="p-4 rounded-lg bg-background border border-border">
                     <TrendingUp className="h-6 w-6 text-primary mb-2" />
                     <p className="text-2xl font-bold text-foreground">70%</p>
-                    <p className="text-sm text-muted-foreground">ลดเวลา</p>
+                    <p className="text-sm text-muted-foreground">{t("case_metric_reduce_label")}</p>
                   </div>
                 </div>
               </div>
@@ -95,7 +96,7 @@ const CaseStudy = ({ onCreateClick }: CaseStudyProps) => {
                 size="lg"
                 className="w-full"
               >
-                ทำแบบนี้ให้ฉัน
+                {t("case_cta")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>

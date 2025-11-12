@@ -3,6 +3,7 @@ import { Sparkles, Play } from "lucide-react";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import before1 from "@/assets/before-1.jpg";
 import after1 from "@/assets/after-1.jpg";
+import { useI18n } from "@/lib/i18n";
 
 interface HeroSectionProps {
   onStartClick: () => void;
@@ -10,6 +11,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ onStartClick, isProcessing }: HeroSectionProps) => {
+  const { t } = useI18n();
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-background to-card">
       <div className="container mx-auto px-6 pt-24 pb-16">
@@ -23,7 +25,7 @@ const HeroSection = ({ onStartClick, isProcessing }: HeroSectionProps) => {
               </span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
-              สอนใช้งานทีละขั้น + แนะแนวรับเครดิตเริ่มต้น $300 เพื่อเริ่มต้นแบบคุ้มค่า
+              {t("hero_tagline")}
             </p>
             {/* Pricing chips inline in Hero */}
             <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -45,7 +47,7 @@ const HeroSection = ({ onStartClick, isProcessing }: HeroSectionProps) => {
                 className="text-lg px-8 py-6 shadow-[0_0_20px_hsl(var(--primary)/0.4)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.6)] transition-all"
               >
                 <Sparkles className="mr-2 h-5 w-5" />
-                {isProcessing ? "กำลังเชื่อมต่อ..." : "เริ่มเรียนรู้ฟรี"}
+                {isProcessing ? "กำลังเชื่อมต่อ..." : t("hero_start")}
               </Button>
               <Button 
                 variant="default"
@@ -53,7 +55,7 @@ const HeroSection = ({ onStartClick, isProcessing }: HeroSectionProps) => {
                 className="text-lg px-8 py-6"
                 onClick={() => window.open('https://lin.ee/8ttXIxK', '_blank')}
               >
-                สมัครเรียนผ่าน LINE
+                {t("hero_line_cta")}
               </Button>
               <Button 
                 variant="outline"
@@ -62,7 +64,7 @@ const HeroSection = ({ onStartClick, isProcessing }: HeroSectionProps) => {
               onClick={() => document.getElementById("free-credits")?.scrollIntoView({ behavior: "smooth" })}
               >
                 <Play className="mr-2 h-5 w-5" />
-                ดูวิธีรับเครดิต $300
+                {t("hero_view_credit")}
               </Button>
             </div>
             <div className="mt-6 flex flex-col gap-2">

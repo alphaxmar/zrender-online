@@ -7,39 +7,30 @@ import before2 from "@/assets/before-2.jpg";
 import after2 from "@/assets/after-2.jpg";
 import before3 from "@/assets/before-3.jpg";
 import after3 from "@/assets/after-3.jpg";
+import { useI18n } from "@/lib/i18n";
 
 interface DemoStripProps {
   onCreateClick: () => void;
 }
 
-const demos = [
-  {
-    before: before1,
-    after: after1,
-    caption: "Muji Living 34 วิ • 1 เครดิต"
-  },
-  {
-    before: before2,
-    after: after2,
-    caption: "Tropical Facade 41 วิ • 1 เครดิต"
-  },
-  {
-    before: before3,
-    after: after3,
-    caption: "Modern Interior 38 วิ • 1 เครดิต"
-  }
+const demosBase = [
+  { before: before1, after: after1, captionKey: "demo_caption1" },
+  { before: before2, after: after2, captionKey: "demo_caption2" },
+  { before: before3, after: after3, captionKey: "demo_caption3" },
 ];
 
 const DemoStrip = ({ onCreateClick }: DemoStripProps) => {
+  const { t } = useI18n();
+  const demos = demosBase.map(d => ({ ...d, caption: t(d.captionKey as any) }));
   return (
     <section id="examples" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            แสดงผลลัพธ์ที่น่าทึ่ง
+            {t("demo_title")}
           </h2>
           <p className="text-xl text-muted-foreground">
-            เลื่อนเพื่อเปรียบเทียบภาพก่อนและหลังใช้ AI
+            {t("demo_subtitle")}
           </p>
         </div>
 
@@ -64,7 +55,7 @@ const DemoStrip = ({ onCreateClick }: DemoStripProps) => {
                   onClick={onCreateClick}
                 >
                   <Sparkles className="mr-2 h-4 w-4" />
-                  สร้างแบบนี้
+                  {t("demo_button")}
                 </Button>
               </div>
             </div>

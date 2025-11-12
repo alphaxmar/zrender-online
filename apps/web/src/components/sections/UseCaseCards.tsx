@@ -1,41 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Building2, GraduationCap, ArrowRight } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 interface UseCaseCardsProps {
   onStartClick: () => void;
 }
 
-const useCases = [
-  {
-    icon: Building2,
-    title: "เอเจนซียูนิตมือสอง",
-    benefit: "ทำภาพขายไวขึ้น 3×",
-    description: "แปลงห้องเปล่าเป็นภาพ staging สวยงามในไม่กี่วินาที ทำให้ขายได้เร็วขึ้นและราคาดีขึ้น",
-    color: "from-primary/10 to-primary/5"
-  },
-  {
-    icon: TrendingUp,
-    title: "สตูดิโอสถาปัตย์",
-    benefit: "ลดรอบแก้คอนเซปต์ 50%",
-    description: "นำเสนอแนวคิดหลายเวอร์ชันให้ลูกค้าได้เลือกเร็วขึ้น ลดเวลาแก้ไขกลับไปกลับมา",
-    color: "from-accent/10 to-accent/5"
-  },
-  {
-    icon: GraduationCap,
-    title: "นักศึกษา/ผู้สอน",
-    benefit: "ทำพอร์ต/ตัวอย่างในคลิกเดียว",
-    description: "สร้างภาพประกอบงานนำเสนอและพอร์ตโฟลิโอได้อย่างรวดเร็ว ประหยัดเวลาและค่าใช้จ่าย",
-    color: "from-secondary/20 to-secondary/5"
-  }
+const useCasesBase = [
+  { icon: Building2, titleKey: "usecase1_title", benefitKey: "usecase1_benefit", descKey: "usecase1_desc", color: "from-primary/10 to-primary/5" },
+  { icon: TrendingUp, titleKey: "usecase2_title", benefitKey: "usecase2_benefit", descKey: "usecase2_desc", color: "from-accent/10 to-accent/5" },
+  { icon: GraduationCap, titleKey: "usecase3_title", benefitKey: "usecase3_benefit", descKey: "usecase3_desc", color: "from-secondary/20 to-secondary/5" },
 ];
 
 const UseCaseCards = ({ onStartClick }: UseCaseCardsProps) => {
+  const { t } = useI18n();
+  const useCases = useCasesBase.map(u => ({
+    ...u,
+    title: t(u.titleKey as any),
+    benefit: t(u.benefitKey as any),
+    description: t(u.descKey as any),
+  }));
   return (
     <section className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            ใครได้ประโยชน์อะไร
+            {t("usecase_title")}
           </h2>
         </div>
 
@@ -66,7 +56,7 @@ const UseCaseCards = ({ onStartClick }: UseCaseCardsProps) => {
                 onClick={onStartClick}
                 className="w-full group-hover:bg-primary/10"
               >
-                เริ่มแบบนี้
+                {t("usecase_button")}
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

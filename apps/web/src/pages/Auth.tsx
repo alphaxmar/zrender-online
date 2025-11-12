@@ -1,14 +1,16 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useI18n } from '@/lib/i18n';
 
 const Auth = () => {
+  const { t } = useI18n();
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-primary/5 p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">สมัครเรียน ZRENDER AI</CardTitle>
+          <CardTitle className="text-2xl font-bold text-center">{t('auth_title')}</CardTitle>
           <CardDescription className="text-center">
-            เพื่อเข้าถึงบทเรียนและคู่มือสมาชิก โปรดสมัครผ่าน LINE
+            {t('auth_desc')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -16,7 +18,7 @@ const Auth = () => {
             แอดไลน์ <strong>@hjs2209n</strong> หรือกดปุ่มด้านล่างเพื่อสมัครเรียนและรับสิทธิ์เข้าถึงเนื้อหา
           </p>
           <Button className="w-full" onClick={() => window.open('https://lin.ee/8ttXIxK', '_blank')}>
-            สมัครเรียนผ่าน LINE
+            {t('auth_cta_line')}
           </Button>
 
           {/* Course Intro Video */}

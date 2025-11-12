@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useI18n } from "@/lib/i18n";
 
 interface PricingSectionProps {
   onStartClick: () => void;
@@ -42,15 +43,16 @@ const plans = [
 ];
 
 const PricingSection = ({ onStartClick }: PricingSectionProps) => {
+  const { t } = useI18n();
   return (
     <section id="pricing" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            สมัครคอร์สเรียน ZRENDER AI
+            {t("pricing_title")}
           </h2>
           <p className="text-xl text-muted-foreground">
-            จ่ายครั้งเดียว ใช้ความรู้และทรัพยากรได้ตลอด • แนะแนวรับเครดิตเริ่มต้น $300
+            {t("pricing_desc")}
           </p>
         </div>
 
@@ -72,7 +74,7 @@ const PricingSection = ({ onStartClick }: PricingSectionProps) => {
               
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-foreground mb-2">
-                  {plan.name}
+                  {index === 0 ? t("pricing_plan_standard") : t("pricing_plan_pro")}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
                   {plan.description}
@@ -102,7 +104,7 @@ const PricingSection = ({ onStartClick }: PricingSectionProps) => {
                 className="w-full"
                 size="lg"
               >
-                {plan.cta}
+                {index === 0 ? t("pricing_plan_standard_cta") : t("pricing_plan_pro_cta")}
               </Button>
             </div>
           ))}

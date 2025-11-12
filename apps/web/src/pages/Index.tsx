@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import HeroSection from "@/components/sections/HeroSection";
 import DemoStrip from "@/components/sections/DemoStrip";
 import UseCaseCards from "@/components/sections/UseCaseCards";
 import FeatureGrid from "@/components/sections/FeatureGrid";
-import SocialProof from "@/components/sections/SocialProof";
 import PricingSection from "@/components/sections/PricingSection";
 import CaseStudy from "@/components/sections/CaseStudy";
 import FAQSection from "@/components/sections/FAQSection";
@@ -18,20 +18,22 @@ import { LogOut, Upload } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useI18n } from "@/lib/i18n";
 
 const Index = () => {
   const { user, loading, signOut } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
   const [isRendering, setIsRendering] = useState(false);
+  const { t } = useI18n();
 
 
   const handleStartRendering = async () => {
     // Check if user is logged in
     if (!user) {
       toast({
-        title: "สมัครเรียนเพื่อเข้าถึงเนื้อหา",
-        description: "แอดไลน์ @hjs2209n เพื่อสมัครเรียนและรับสิทธิ์เข้าถึง",
+        title: t("auth_title"),
+        description: t("auth_desc"),
       });
       window.open('https://lin.ee/8ttXIxK', '_blank');
       return;
@@ -104,7 +106,7 @@ const Index = () => {
             className="gap-2"
           >
             <LogOut className="h-4 w-4" />
-            ออกจากระบบ
+            {t("navbar_logout")}
           </Button>
         ) : (
           <Button
@@ -112,9 +114,10 @@ const Index = () => {
             onClick={() => window.open('https://lin.ee/8ttXIxK', '_blank')}
             className="gap-2"
           >
-            สมัครเรียนผ่าน LINE
+            {t("navbar_login")}
           </Button>
         )}
+        <LanguageSwitcher />
       </Navbar>
 
       {/* Hero Section */}
@@ -132,8 +135,7 @@ const Index = () => {
       {/* Feature Grid */}
       <FeatureGrid />
 
-      {/* Social Proof */}
-      <SocialProof />
+      {/* Social Proof removed as requested */}
 
       {/* Tutorial & Free Credits */}
       <TutorialSection />
@@ -158,10 +160,10 @@ const Index = () => {
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            สร้าง Before/After แรกของคุณใน 60 วิ
+            {t("final_cta_title")}
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            เริ่มใช้งานฟรี ไม่ต้องใส่บัตร ได้ 20 เครดิตทันที
+            {t("final_cta_desc")}
           </p>
           <Button 
             size="lg"
@@ -169,7 +171,7 @@ const Index = () => {
             disabled={isRendering}
             className="text-lg px-10 py-7 shadow-[0_0_30px_hsl(var(--primary)/0.4)]"
           >
-            {isRendering ? "กำลังเชื่อมต่อ..." : "เริ่มใช้งานเลย"}
+            {isRendering ? "กำลังเชื่อมต่อ..." : t("final_cta_button")}
           </Button>
         </div>
       </section>
@@ -179,8 +181,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center text-muted-foreground space-y-2">
             <p className="font-semibold text-foreground">ZRENDER AI</p>
-            <p className="text-sm">เรนเดอร์ก่อน–หลังใน 60 วิ ด้วยพลัง AI</p>
-            <p className="text-sm">&copy; 2025 ZRENDER AI. สงวนลิขสิทธิ์.</p>
+            <p className="text-sm">{t("footer_tagline")}</p>
+            <p className="text-sm">{t("footer_rights")}</p>
           </div>
         </div>
       </footer>
@@ -194,7 +196,7 @@ const Index = () => {
           size="lg"
         >
           <Upload className="mr-2 h-5 w-5" />
-          อัปโหลดรูปแรก
+          {t("fab_upload_first")}
         </Button>
       )}
     </div>
